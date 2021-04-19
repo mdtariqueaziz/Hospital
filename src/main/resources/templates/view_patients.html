@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="index::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is home page</title>
+</head>
+<body>
+<section>
+<div class="container">
+
+
+				<table class="table table-sm">
+					<thead>
+					<tr class="table-primary">
+					<td scope="col">#Id</td>
+					<td scope="col">Patient Name</td>
+					</tr>
+					<tr th:each="p : ${patients}">
+					<td th:text="${'PST'+p.id}"></td>
+					<td th:text="${p.name}"></td>
+					</tr>
+					
+					</thead>
+					</table>
+</div>
+</section>
+</body>
+</html>

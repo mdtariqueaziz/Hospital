@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="index::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient dashboard</title>
+</head>
+<body>
+<section>
+<div class="container">
+
+<div class="card" style="margin-right: 25px">
+	   <div class="card-body text-center">
+	   
+	      <h4 >
+	      <span th:text="${patient.name}"></span>
+	      
+	      </h4>
+	     <table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#ID</th>
+							<th scope="col">Email</th>
+							<th scope="col">Phone</th>
+							<th scope="col">Address</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr >
+							<td th:text="${patient.id}"></td>
+							<td th:text="${patient.email}"></td>
+
+							<td th:text="${patient.phone}"></td>
+							<td th:text="${patient.address}"></td>
+							
+
+							
+						</tr>
+					</tbody>
+				</table>
+				
+				<a   th:href="@{'/update-patient/' + ${patient.id}}" class="btn btn-primary btn-block">Update</a>
+				<a  th:href="@{'/delete/' + ${patient.id}}" class="btn btn-danger btn-block">Delete</a>
+	     
+	      
+	   </div>
+	
+	</div>
+</div>
+</section>
+</body>
+</html>

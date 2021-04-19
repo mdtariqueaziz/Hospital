@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="index::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is home page</title>
+</head>
+<body>
+	<section>
+		<div class="container ">
+			
+			</head>
+			<body>
+
+				<form th:action="@{/do-update}" method="post"
+					th:object="${patient}">
+
+					<input type="text" name="name" placeholder="Enter Name"> <input
+						type="text" name="email" placeholder="Enter Email"> <input
+						type="text" name="address" placeholder="Enter Address"> <input
+						type="text" name="phone" placeholder="Enter Phone"> <input
+						type="text" name="password" placeholder="Enter Password">
+
+
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button class="btn btn-warning">Reset</button>
+				</form>
+		</div>
+
+	</section>
+</body>
+</html>
